@@ -14,6 +14,16 @@ import 'package:study_flutter/navigation/coffeedetails.dart';
 import 'package:study_flutter/navigation/coffeepage.dart';
 import 'package:study_flutter/navigator/firstpage.dart';
 import 'package:study_flutter/navigator/secondpage.dart';
+import 'package:study_flutter/newwork/Bmwmseries.dart';
+import 'package:study_flutter/newwork/Dateandtime.dart';
+import 'package:study_flutter/newwork/carhome.dart';
+import 'package:study_flutter/newwork/carinbox.dart';
+import 'package:study_flutter/newwork/carprofile.dart';
+import 'package:study_flutter/newwork/carsapp.dart';
+import 'package:study_flutter/newwork/carwishlist.dart';
+import 'package:study_flutter/newwork/enterpin.dart';
+import 'package:study_flutter/newwork/payment.dart';
+import 'package:study_flutter/newwork/summary.dart';
 import 'package:study_flutter/practice.dart';
 import 'package:study_flutter/program.dart';
 import 'package:study_flutter/signinpage/signin.dart';
@@ -40,12 +50,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner:false ,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MyNavigationBar()
+      home: Summary()
       ,
     );
   }

@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:study_flutter/navigation/coffee.dart';
+import 'package:study_flutter/newwork/carprofile.dart';
 
-import 'navigator/firstpage.dart';
+import 'carhome.dart';
+import 'carinbox.dart';
+import 'carwishlist.dart';
 
-class MyNavigationBar extends StatefulWidget {
-  MyNavigationBar({Key? key}) : super(key: key);
+
+
+
+class Carsappnavigation extends StatefulWidget {
+  Carsappnavigation({Key? key}) : super(key: key);
 
   @override
-  _MyNavigationBarState createState() => _MyNavigationBarState();
+  _CarsappnavigationState createState() => _CarsappnavigationState();
 }
 
-class _MyNavigationBarState extends State<MyNavigationBar> {
+class _CarsappnavigationState extends State<Carsappnavigation> {
   int _selectedIndex = 0;
 
   static const List<dynamic> _widgetOptions = [
-    Coffee(),
-    Coffee(),
+    Carapp(),
+    Carwishlist(),
+    Carinbox(),
+    Carprofile(),
 
-    Text('hh Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+
   ];
 
   void _onItemTapped(int index) {
@@ -30,30 +37,34 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: const Text('Flutter BottomNavigationBar Example'),
-          backgroundColor: Colors.green),
+      // appBar: AppBar(
+      //     title: const Text('Flutter BottomNavigationBar Example'),
+      //     backgroundColor: Colors.green),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
+                icon: Icon(Icons.home_outlined),
+                label: '',
                 backgroundColor: Color.fromARGB(255, 76, 153, 175)),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
+                icon: Icon(Icons.favorite_border),
+                label: '',
+                backgroundColor: Color.fromARGB(255, 76, 153, 175)),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.chat),
+                label: '',
                 backgroundColor: Color.fromARGB(255, 76, 153, 175)),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                label: 'Profile',
+                label: '',
                 backgroundColor: Color.fromARGB(255, 76, 153, 175)),
           ],
           type: BottomNavigationBarType. fixed,
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.red,
+          selectedItemColor: Colors.black,
           iconSize: 40,
           onTap: _onItemTapped,
           elevation: 1),
