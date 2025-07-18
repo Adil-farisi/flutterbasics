@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/newwork/payment.dart';
 
 class Dateandtime extends StatefulWidget {
   const Dateandtime({super.key});
@@ -11,10 +12,10 @@ class _DateandtimeState extends State<Dateandtime> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(backgroundColor: Colors.grey.shade50,
         centerTitle: false,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.of(context).pop();},
           icon: Icon(Icons.arrow_back_ios_new, size: 20),
         ),
         title: Text(
@@ -25,7 +26,7 @@ class _DateandtimeState extends State<Dateandtime> {
             fontWeight: FontWeight.w900,
           ),
         ),
-      ),
+      ),backgroundColor: Colors.grey.shade50,
       body: Column(
         children: [
           SizedBox(height: 30),
@@ -289,28 +290,34 @@ class _DateandtimeState extends State<Dateandtime> {
           Spacer(),
           Divider(),
           SizedBox(height: 10,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 60,
-                width: 380,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(25, 37, 64, 1),
-                ),
-                child: Center(
-                  child: Text(
-                    'Continue',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+          InkWell(onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return Payment();
+            },));
+          },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 60,
+                  width: 380,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(25, 37, 64, 1),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Continue',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),SizedBox(height: 10,),
         ],
       ),

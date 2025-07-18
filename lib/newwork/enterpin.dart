@@ -11,10 +11,10 @@ class _EnterpinState extends State<Enterpin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(backgroundColor: Colors.grey.shade50,
         centerTitle: false,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.of(context).pop();},
           icon: Icon(Icons.arrow_back_ios_new),
         ),
         title: Text(
@@ -25,7 +25,7 @@ class _EnterpinState extends State<Enterpin> {
             fontWeight: FontWeight.w900,
           ),
         ),
-      ),
+      ),backgroundColor: Colors.grey.shade50,
       body: Column(
         children: [
           Padding(

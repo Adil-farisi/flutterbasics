@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/newwork/summary.dart';
 
 class Payment extends StatefulWidget {
   const Payment({super.key});
@@ -12,10 +13,10 @@ class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(backgroundColor: Colors.grey.shade50,
         centerTitle: false,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.of(context).pop();},
           icon: Icon(Icons.arrow_back_ios_new),
         ),
         title: Text(
@@ -36,7 +37,7 @@ class _PaymentState extends State<Payment> {
             ),
           ),
         ],
-      ),
+      ),backgroundColor: Colors.grey.shade50,
       body: Column(
         children: [
           Row(
@@ -162,28 +163,34 @@ class _PaymentState extends State<Payment> {
           Spacer(),
           Divider(),
           SizedBox(height: 10,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 60,
-                width: 380,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(25, 37, 64, 1),
-                ),
-                child: Center(
-                  child: Text(
-                    'Continue',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
+          InkWell(onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return Summary();
+            },));
+          },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 60,
+                  width: 380,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(25, 37, 64, 1),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Continue',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           SizedBox(height: 20,),
         ],

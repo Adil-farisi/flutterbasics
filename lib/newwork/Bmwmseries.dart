@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/newwork/Dateandtime.dart';
 
 class Bmwmseries extends StatefulWidget {
   const Bmwmseries({super.key});
@@ -10,10 +11,10 @@ class Bmwmseries extends StatefulWidget {
 class _BmwmseriesState extends State<Bmwmseries> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return Scaffold(backgroundColor: Colors.grey.shade50,
+      appBar: AppBar(backgroundColor: Colors.grey.shade50,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.of(context).pop();},
           icon: Icon(Icons.arrow_back_ios_new, size: 20),
         ),
         actions: [
@@ -403,7 +404,6 @@ class _BmwmseriesState extends State<Bmwmseries> {
                                             bottomLeft: Radius.circular(10),
                                           ),
                                         ),
-
                                       ),
                                     ),
                                   ],
@@ -416,6 +416,72 @@ class _BmwmseriesState extends State<Bmwmseries> {
                     ),
                   ],
                 ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              Padding(padding: const EdgeInsets.only(left: 10)),
+              Text(
+                'Location',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          Divider(),
+          SizedBox(height: 25),
+          Row(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'RS/60,000',
+                    style: TextStyle(
+                      color: Color.fromRGBO(25, 37, 64, 1),
+                      fontSize: 25,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  Text(
+                    '/ day',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),SizedBox(width: 100,),
+                  Container(
+                    height: 50,
+                    width: 140,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color.fromRGBO(25, 37, 64, 1),
+                    ),
+                    child: InkWell(onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return Dateandtime();
+                      },));
+                    },
+                      child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Rent Now',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

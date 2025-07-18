@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/newwork/Bmwmseries.dart';
 
 class Carapp extends StatefulWidget {
   const Carapp({super.key});
@@ -348,14 +349,20 @@ class _CarappState extends State<Carapp> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 190,
-                width: 370,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                  image: DecorationImage(
-                    image: AssetImage('bmw-m-series-m5-sedan.png'),
+              InkWell(onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Bmwmseries();
+                },));
+              },
+                child: Container(
+                  height: 190,
+                  width: 370,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    image: DecorationImage(
+                      image: AssetImage('bmw-m-series-m5-sedan.png'),
+                    ),
                   ),
                 ),
               ),
